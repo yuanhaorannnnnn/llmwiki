@@ -59,7 +59,7 @@ language: zh | en | auto
 - **产品:** product, platform, api, framework
 - **方法:** comparison, timeline, survey, methodology
 - **争议:** controversy, limitation, safety, ethics
-- **来源类型:** article, paper, video, transcript, book
+- **来源类型:** article, paper, video, transcript, book, clipping
 - **元信息:** prediction, todo, deprecated
 
 规则：页面使用的所有 tag 必须出现在本 taxonomy 中。如需新 tag，先在此添加，再使用。
@@ -138,3 +138,10 @@ language: zh | en | auto
 - 单次搜索检查现有页面
 - 统一创建/更新页面
 - 最后统一更新 `index.md` 和 `log.md`
+
+### Clippings / 剪藏
+1. Obsidian Web Clipper 收藏的网页内容 → `Clippings/`
+2. 添加 raw frontmatter（source_url, clipped, clipper_type）
+3. 分析内容，识别实体/概念
+4. 检查 `index.md` 是否已有对应页面
+5. 新建或更新 wiki 页面 → 更新 `index.md` → 追加 `log.md`

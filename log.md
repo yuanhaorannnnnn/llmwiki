@@ -12,6 +12,13 @@
 - 创建模板：_templates/concept-template.md, _templates/query-template.md
 
 ## [2026-04-22] update | SCHEMA.md 扩展
-- 添加 tag: video, transcript, book（来源类型分类）
+- 添加 tag: video, transcript, book, clipping（来源类型分类）
 - 添加视频来源 frontmatter 规范
-- 添加 Ingest Pipeline 章节（文章/论文/视频/Bilibili/RSS/批量）
+- 添加 Ingest Pipeline 章节（文章/论文/视频/Bilibili/RSS/剪藏/批量）
+- 修正剪藏目录为 Clippings/（Obsidian Web Clipper 配置路径）
+- 细分 raw/assets/ 为 audio/video/
+
+## [2026-04-28] create | Kimi K2.5 与 Claude Opus 4.6 编码体验对比
+- 来源：raw/transcripts/bv1h1pxzpejim_transcript.md
+- 视频：raw/assets/video/bv1h1pxzpejim.mp4
+- 创建笔记：comparisons/kimi-k2-5-vs-claude-opus-4-6-coding-experience.md

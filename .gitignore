@@ -1,5 +1,6 @@
-# raw/ 只放原始资料，不提交到 git
+# raw/ 和 Clippings/ 只放原始资料，不提交到 git
 raw/
+Clippings/
 
 # 归档内容
 _archive/
