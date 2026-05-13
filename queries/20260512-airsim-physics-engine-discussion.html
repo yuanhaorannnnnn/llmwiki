@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AirSim Discussion #3284 — 外部物理引擎集成</title>
+<style>
+  :root {
+    --ivory: #FAF9F5;
+    --slate: #141413;
+    --clay: #D97757;
+    --oat: #E3DACC;
+    --olive: #788C5D;
+    --rust: #B04A3F;
+    --gray-100: #F0EEE6;
+    --gray-300: #D1CFC5;
+    --gray-500: #87867F;
+    --gray-700: #3D3D3A;
+    --white: #FFFFFF;
+
+    --serif: ui-serif, Georgia, serif;
+    --sans: system-ui, -apple-system, sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+    --radius-panel: 12px;
+    --radius-row: 8px;
+    --border: 1.5px solid var(--gray-300);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    padding: 56px 24px 120px;
+    background: var(--ivory);
+    color: var(--slate);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 820px; margin: 0 auto; }
+
+  /* ---------- Header ---------- */
+  header { margin-bottom: 32px; }
+  .gh-id {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--gray-500);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    line-height: 1.2;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 12px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 5px 12px;
+    line-height: 1;
+  }
+  .pill .k { font-weight: 400; opacity: 0.75; }
+  .pill.op     { background: var(--clay); color: var(--white); letter-spacing: 0.03em; }
+  .pill.stats  { background: var(--gray-100); color: var(--gray-700); border: var(--border); }
+  .pill.resolved { background: var(--olive); color: var(--white); }
+  .pill.ongoing  { background: var(--rust); color: var(--white); }
+
+  /* ---------- TL;DR ---------- */
+  .tldr {
+    background: var(--slate);
+    color: var(--ivory);
+    border-radius: var(--radius-panel);
+    padding: 22px 26px;
+    margin-bottom: 48px;
+  }
+  .tldr-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--oat);
+    margin-bottom: 10px;
+  }
+  .tldr p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+  .tldr code {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    background: rgba(250,249,245,0.12);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 52px; scroll-margin-top: 24px; }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+  }
+  hr.rule { border: none; border-top: 1px solid var(--gray-300); margin: 0 0 22px; }
+
+  /* ---------- Participant Cards ---------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-row);
+    padding: 18px 20px;
+  }
+  .card .card-name {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .card .card-role {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+  .card .card-quote {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray-500);
+    padding-left: 12px;
+    border-left: 2px solid var(--oat);
+    margin-bottom: 14px;
+    line-height: 1.55;
+  }
+  .card .card-stance {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .card .card-stance strong { color: var(--slate); font-size: 12px; }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    position: relative;
+    padding: 4px 0 4px 16px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--gray-300);
+  }
+  .tl-entry {
+    position: relative;
+    padding: 0 0 22px 28px;
+  }
+  .tl-entry::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--gray-300);
+  }
+  .tl-entry.key::before {
+    background: var(--clay);
+    border-color: var(--clay);
+    left: 8px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+  }
+  .tl-entry .tl-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-bottom: 4px;
+  }
+  .tl-entry .tl-body {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-row);
+    padding: 14px 18px;
+  }
+  .tl-entry .tl-author {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .tl-entry .tl-text {
+    font-size: 14px;
+    margin-top: 4px;
+    line-height: 1.55;
+  }
+  .tl-keyword {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--gray-100);
+    color: var(--clay);
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ---------- Decision columns ---------- */
+  .decision-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .d-entry {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-row);
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .d-entry .d-icon {
+    font-size: 20px;
+    min-width: 28px;
+    text-align: center;
+  }
+  .d-entry .d-body { font-size: 14px; line-height: 1.55; }
+  .d-entry .d-body strong { font-size: 15px; }
+
+  /* ---------- Open Questions ---------- */
+  .open-box {
+    background: var(--gray-100);
+    border-left: 3px solid var(--rust);
+    border-radius: 0 var(--radius-row) var(--radius-row) 0;
+    padding: 18px 22px;
+    margin-top: 20px;
+  }
+  .open-box h4 {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--rust);
+    margin: 0 0 10px;
+  }
+  .open-box li {
+    font-size: 13px;
+    margin-left: 16px;
+    margin-bottom: 5px;
+    color: var(--gray-700);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--gray-300);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+  footer a { color: var(--gray-700); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<header>
+  <div class="gh-id">microsoft / AirSim · Discussion #3284</div>
+  <h1>集成外部物理引擎以提升无人机物理仿真</h1>
+  <div class="meta-row">
+    <div class="pill op"><span class="k">发起</span>jonyMarino <span class="k">· Maintainer</span></div>
+    <div class="pill stats"><span class="k">参与</span>8 人</div>
+    <div class="pill stats"><span class="k">跨度</span>2021-01-07 → 2024-12-19</div>
+    <div class="pill resolved"><span class="k">状态</span>PR #3626 已合并</div>
+  </div>
+</header>
+
+<div class="tldr">
+  <div class="tldr-label">TL;DR</div>
+  <p>
+    AirSim 的自研 <code>FastPhysics</code> 无人机动力学模型无法满足所有场景。
+    维护者 jonyMarino 发起讨论后，社区偏好明确转向 <code>JSBSim</code>（库级编译集成），
+    否决了 Gazebo（运行时集成有性能代价）。
+    106 天后 <code>PR #3626</code> 合并，实现了外部动力学模拟器接口，让用户可替换物理引擎。
+  </p>
+</div>
+
+<section>
+  <h2>参与方</h2>
+  <hr class="rule">
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-name">jonyMarino</div>
+      <div class="card-role">Maintainer · 发起人</div>
+      <div class="card-quote">"与其继续改进 FastPhysics，不如集成外部模拟器"</div>
+      <div class="card-stance">
+        <strong>初始立场：</strong>偏向 JSBSim（库级编译集成），质疑 Gazebo（运行时集成有性能代价）<br><br>
+        <strong>最终行动：</strong>external_dynamics_simulator 分支 → PR #3626 合并主分支
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">AOS55</div>
+      <div class="card-role">核心贡献者</div>
+      <div class="card-quote">"JSBSim 是我们的首选——易扩展、开源、有完整非线性模型"</div>
+      <div class="card-stance">
+        <strong>立场：</strong>最详细的模拟器调研 · 强推 JSBSim<br><br>
+        <strong>贡献：</strong>验证 jonyMarino 分支 + Fixedwing-Airsim 原型
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Zartris</div>
+      <div class="card-role">参与者</div>
+      <div class="card-quote">"Flightmare 和 FlightGoggles 已实现 Gazebo 物理 + 更好图形"</div>
+      <div class="card-stance">
+        <strong>立场：</strong>支持 Gazebo · 提供已有项目作为架构参考 · 最终未被采纳
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">m1baldwin</div>
+      <div class="card-role">参与者</div>
+      <div class="card-quote">"Gazebo 是大量机器人开发的事实入门模拟器"</div>
+      <div class="card-stance">
+        <strong>立场：</strong>中立 · 提出关键区分：集成 ODE 引擎 vs 复用 SDF/URDF 模型定义
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">oogetyboogety</div>
+      <div class="card-role">参与者</div>
+      <div class="card-quote">"FastPhysics 和 UE Chaos 物理系统有什么区别？"</div>
+      <div class="card-stance">
+        <strong>贡献：</strong>引发 FastPhysics vs Chaos vs PhysX 的技术架构澄清
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">zimmy87</div>
+      <div class="card-role">参与者</div>
+      <div class="card-quote">"FastPhysics 只用于无人机，汽车物理完全由 UE PhysX 处理"</div>
+      <div class="card-stance">
+        <strong>贡献：</strong>澄清物理架构：FastPhysics（无人机）≠ PhysX（汽车）≠ Chaos（未使用）
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">pkashya</div>
+      <div class="card-role">晚期加入</div>
+      <div class="card-quote">"有人看过 Chrono/synChrono 和 CARLA 吗？"</div>
+      <div class="card-stance">
+        <strong>贡献：</strong>引入新选项，但针对轮式车辆场景，未被深入讨论
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">RoninsCode</div>
+      <div class="card-role">晚期提问 (2024)</div>
+      <div class="card-quote">"求 AirSim + UE5 + Chaos Engine 安装帮助"</div>
+      <div class="card-stance">
+        <strong>贡献：</strong>3 年后回来问 UE5 适配，与讨论主线无关
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>讨论时间线</h2>
+  <hr class="rule">
+
+  <div class="timeline">
+
+    <div class="tl-entry key">
+      <div class="tl-date">2021-01-07 · Day 0</div>
+      <div class="tl-body">
+        <div class="tl-author">jonyMarino <span class="tl-keyword">讨论发起</span></div>
+        <div class="tl-text">正式提议集成外部物理引擎。抛出三个问题：大家用什么模拟器？优缺点？集成难度？</div>
+      </div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-date">2021-01-08 · Day 1</div>
+      <div class="tl-body">
+        <div class="tl-author">Zartris</div>
+        <div class="tl-text">支持 Gazebo 方案，引用 Flightmare/FlightGoggles。jonyMarino 后续纠正：Flightmare 论文误称 AirSim 用 UE 物理——只有 Car 模式如此。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry key">
+      <div class="tl-date">2021-01-11 · Day 4</div>
+      <div class="tl-body">
+        <div class="tl-author">jonyMarino <span class="tl-keyword">立场明确</span></div>
+        <div class="tl-text">明确偏向 JSBSim：Gazebo 是"运行时集成，有性能代价"；JSBSim 能做"编译时集成"。质疑 Flightmare 方案无法回传碰撞信息。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-date">2021-01-15 · Day 8</div>
+      <div class="tl-body">
+        <div class="tl-author">m1baldwin</div>
+        <div class="tl-text">提出关键区分："用 Gazebo 做物理"到底是用 ODE 引擎还是用 SDF/URDF 模型定义？Gazebo 向前兼容有价值。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-date">2021-01-16 ~ 21 · Days 9–14</div>
+      <div class="tl-body">
+        <div class="tl-author">oogetyboogety + zimmy87</div>
+        <div class="tl-text">技术旁支：澄清 FastPhysics（无人机）≠ PhysX（汽车）≠ Chaos（未使用）的架构关系。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry key">
+      <div class="tl-date">2021-02-19 · Day 43</div>
+      <div class="tl-body">
+        <div class="tl-author">AOS55 <span class="tl-keyword">核心贡献</span></div>
+        <div class="tl-text">提供最详细的模拟器调研：JSBSim（全非线性模型+Python API）、Gazebo（ROS路径规划）、Simulink/Matlab（F-16 FDM）。建议添加 JSBSim 独立模式以覆盖固定翼。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry key">
+      <div class="tl-date">2021-03-05 · Day 57</div>
+      <div class="tl-body">
+        <div class="tl-author">jonyMarino <span class="tl-keyword">原型发布</span></div>
+        <div class="tl-text">发布 external_dynamics_simulator 分支，建议用 setVehiclePose() 替代 CV 模式以获取碰撞检测。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-date">2021-03-18 · Day 70</div>
+      <div class="tl-body">
+        <div class="tl-author">pkashya</div>
+        <div class="tl-text">引入 Chrono/synChrono 和 CARLA 作为额外选项，针对轮式车辆场景，未深入讨论。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry key">
+      <div class="tl-date">2021-03-29 · Day 81</div>
+      <div class="tl-body">
+        <div class="tl-author">AOS55 <span class="tl-keyword">原型验证</span></div>
+        <div class="tl-text">确认 jonyMarino 分支运行良好。发布 Fixedwing-Airsim 仓库（JSBSim + Python 客户端固定翼 RL 方案）。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry key">
+      <div class="tl-date">2021-04-23 · Day 106</div>
+      <div class="tl-body">
+        <div class="tl-author">jonyMarino <span class="tl-keyword">合并</span></div>
+        <div class="tl-text">PR #3626 创建，含 spinning rotors。外部动力学模拟器接口正式进入主分支。</div>
+      </div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-date">2024-12-19 · +3年</div>
+      <div class="tl-body">
+        <div class="tl-author">RoninsCode</div>
+        <div class="tl-text">询问 AirSim + UE5 + Chaos 安装。与讨论主线无关。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>结论与决议</h2>
+  <hr class="rule">
+
+  <div class="decision-table">
+
+    <div class="d-entry">
+      <div class="d-icon">✅</div>
+      <div class="d-body">
+        <strong>外部动力学接口方案被采纳，替代了"改进 FastPhysics"的思路</strong><br>
+        PR #3626 实现了通过 setVehiclePose() 从外部模拟器注入位姿的接口。保留 FastPhysics 现有能力的同时，让用户可自由选择外部物理引擎。
+      </div>
+    </div>
+
+    <div class="d-entry">
+      <div class="d-icon">✅</div>
+      <div class="d-body">
+        <strong>JSBSim 成为事实参考实现</strong><br>
+        jonyMarino 从最初就偏向 JSBSim（编译时集成、更精确的物理模型）；AOS55 的调研和 Fixedwing-Airsim 原型进一步验证了可行性。Gazebo 未进入实际集成路线。
+      </div>
+    </div>
+
+    <div class="d-entry">
+      <div class="d-icon">✅</div>
+      <div class="d-body">
+        <strong>澄清了 AirSim 物理架构</strong><br>
+        FastPhysics（无人机/四旋翼）≠ PhysX（汽车）≠ Chaos（未使用）。关键认知：AirSim 的物理引擎选择因车辆类型而异。
+      </div>
+    </div>
+
+  </div>
+
+  <div class="open-box">
+    <h4>未解决的问题</h4>
+    <li>原生 C++ JSBSim 集成（#2955）的最终目标尚未实现——AOS55 的 Fixedwing-Airsim 仍基于 Python 客户端方案</li>
+    <li>Chrono/synChrono 和 CARLA 被提及但未经过深入评估</li>
+    <li>Gazebo 的性能/架构担忧未被充分验证和反驳——是合理否决还是路径选择，无法从讨论中判断</li>
+    <li>UE5 + Chaos Engine 适配（2024 年提问）已偏离原讨论范围</li>
+  </div>
+
+</section>
+
+<footer>
+  来源：<a href="https://github.com/microsoft/AirSim/discussions/3284">github.com/microsoft/AirSim/discussions/3284</a> ·
+  梳理时间：2026-05-12 · 用 <a href="#">discussion-digest</a> 生成
+</footer>
+
+</div>
+</body>
+</html>

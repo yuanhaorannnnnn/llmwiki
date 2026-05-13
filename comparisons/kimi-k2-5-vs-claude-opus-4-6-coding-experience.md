@@ -12,7 +12,7 @@ confidence: medium
 
 ## 核心观点
 
-该视频的核心判断是：[[kimi-k2-5]] 在 [[oh-my-opencode]] 等工具加持下，已经具备一定程度替代 [[claude-opus-4-6]] 完成 Coding Agent 任务的能力，但稳定性、上下文保持能力和一次性解决问题的效率仍有明显差距。
+该视频的核心判断是：Kimi K2.5 在 Oh My OpenCode 等工具加持下，已经具备一定程度替代 Claude Opus 4.6 完成 Coding Agent 任务的能力，但稳定性、上下文保持能力和一次性解决问题的效率仍有明显差距。
 
 视频作者的总体评价可以概括为：Kimi K2.5 “能干活，也能干好活”，但完成同类任务时更费额度、更费轮次，也更依赖正确的使用方式。
 
@@ -79,11 +79,12 @@ Kimi K2.5 暂不适合以下场景：
 
 ## 来源
 
-- 视频文件：`raw/assets/video/bv1h1pxzpejim.mp4`
-- 转录稿：`raw/transcripts/bv1h1pxzpejim_transcript.md`
+- 视频文件：[[raw/assets/video/bv1h1pxzpejim.mp4]]
+- 转录稿：[[raw/transcripts/bv1h1pxzpejim_transcript.md]]
+- 音频：[[raw/assets/audio/bv1h1pxzpejim.mp3]]
 
 ## 相关链接
 
-- [[kimi-k2-5]]
-- [[claude-opus-4-6]]
-- [[oh-my-opencode]]
+- Kimi K2.5
+- Claude Opus 4.6
+- Oh My OpenCode

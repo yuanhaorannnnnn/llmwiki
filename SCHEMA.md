@@ -71,6 +71,13 @@ language: zh | en | auto
 - **拆分页面**：超过 ~200 行时，拆分为子主题并互链
 - **归档页面**：内容被完全替代时，移入 `_archive/`，从 index 移除
 
+## Directory Placement
+- **单视频结构化笔记**：放入 `queries/`，用于保存一次视频 ingest 后生成的核心观点、关键要点、行动建议和来源路径。
+- **明确对比分析**：放入 `comparisons/`，用于两个或多个对象、工具、模型、方案、体验的并排比较。
+- **可长期复用的知识沉淀**：放入 `concepts/`，用于从多个来源或高价值单一来源中抽象出的稳定概念、方法论和主题页。
+- **原始转录稿**：永远放入 `raw/transcripts/`，不与结构化笔记混放。
+- **原始媒体与衍生素材**：视频、音频、图片等放入 `raw/assets/` 下对应子目录。
+
 ## Entity Pages
 每页一个实体。包含：
 - 概述 / 定义
@@ -99,6 +106,32 @@ language: zh | en | auto
 3. 在 frontmatter 标记：`contradictions: [page-name]`
 4. 在 lint 报告中向用户提示待审
 
+## Wikilink Graph Convention
+
+为确保 Obsidian 图视图能追踪 raw → 转录 → 笔记的完整链路，所有文件必须双向链接：
+
+```
+┌──────────────────┐     [[wikilink]]      ┌──────────────────────┐
+│  raw/assets/      │◄──────────────────────│  queries/xxx.md      │
+│  video/<id>.mp4   │                       │  comparisons/xxx.md  │
+│  audio/<id>.wav   │                       └────────┬─────────────┘
+└────────┬──────────┘                                │
+         │                                           │
+         │[[wikilink]]          [[wikilink]]          │
+         ▼                                           ▼
+┌──────────────────┐                        ┌──────────────────────┐
+│  raw/transcripts/│◄───────────────────────│  queries/xxx.md      │
+│  <id>_transcript │                        │  (## 来源 段)        │
+│  (## 相关笔记 段) │                        └──────────────────────┘
+└──────────────────┘
+```
+
+**规则：**
+- 笔记页面在 `## 来源` 段使用 `[[wikilinks]]` 指向其转录稿和媒体文件
+- 转录稿在 `## 相关笔记` 段使用 `[[wikilinks]]` 回链其结构化笔记和媒体文件
+- `transcribe_audio.py` 脚本自动生成转录稿中的媒体文件 wikilinks 和占位符，笔记链接需在笔记创建后回填
+- `[[wikilinks]]` 路径从文件所在目录出发，使用相对路径（如 `../queries/xxx.md`）
+
 ## Ingest Pipeline
 
 ### 文章 / 网页
@@ -119,12 +152,14 @@ language: zh | en | auto
    - 或 `yt-dlp --write-auto-subs --sub-langs zh,en --skip-download` 获取字幕文件
 2. 保存到 `raw/transcripts/`，添加视频专用 frontmatter
 3. 按章节/主题分段，提取关键论点
-4. 创建或更新概念页面，标注为视频来源
+4. 单视频结构化笔记保存到 `queries/`
+5. 若视频产物是明确对比分析，保存到 `comparisons/`
+6. 若内容可长期复用，再抽象或补充到 `concepts/`
 
 ### Bilibili
 - 使用 `yt-dlp` 提取字幕：`yt-dlp --list-subs URL` 查看可用字幕
 - 若只有 CC 字幕，用 `--write-auto-subs` 提取
-- 若无字幕，提取音频后用 Whisper 转录（本地或 API）
+- 若无字幕，提取音频后用 FunASR 转录（`iic/SenseVoiceSmall`）
 - 其余流程同 YouTube
 
 ### RSS / 博客订阅

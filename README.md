@@ -15,14 +15,16 @@
 raw/          — 原始资料（只读，不覆盖）
   articles/   — 网页文章、剪报
   papers/     — PDF、arxiv 论文
-  transcripts/— 会议记录、访谈
-  assets/     — 图片、图表
+  transcripts/— 原始转录稿
+  assets/     — 图片、音频、视频
 entities/     — 实体页面（人、组织、产品、模型）
-concepts/     — 概念/主题页面
-comparisons/  — 对比分析
-queries/      — 归档的查询结果
+concepts/     — 可长期复用的概念/主题沉淀
+comparisons/  — 明确对比分析
+queries/      — 单视频结构化笔记和一次性查询结果
 _templates/   — 页面模板
 ```
+
+视频内容默认遵循：原始转录稿放 `raw/transcripts/`；单视频结构化笔记放 `queries/`；明确对比分析放 `comparisons/`；可长期复用的知识沉淀放 `concepts/`。
 
 ## 规范
 
