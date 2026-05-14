@@ -1,12 +1,14 @@
 ---
 title: 3D Gaussian Splatting 技术栈
 created: 2026-04-30
-updated: 2026-04-30
+updated: 2026-05-13
 type: concept
-tags: [model, architecture, rendering, multi-modal, video]
+tags: [model, architecture, rendering, multi-modal, video, mesh-extraction]
 sources:
-# sources:
-#   - raw/papers/paper/E-神经渲染/3D Gaussian Ray Tracing Fast Tracing of Particle Scenes.pdf
+  - raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2023-SuGaR Surface-Aligned Gaussian Splatting.pdf
+  - raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2024-2D Gaussian Splatting for Geometrically Accurate Radiance Fields.pdf
+  - raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2024-Gaussian Opacity Fields Efficient and Compact Surface Reconstruction in Unbounded Scenes.pdf
+  - raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2025-3DGS-TO-PC.pdf
 #   - raw/papers/paper/E-神经渲染/2025-3DGUT Enabling Distorted Cameras and Secondary Rays in Gaussian Splatting.pdf
 #   - raw/papers/paper/E-神经渲染/2025-OMNIRE OMNI URBAN SCENE RECONSTRUCTION.pdf
 #   - raw/papers/paper/E-神经渲染/REAL-TIME PHOTOREALISTIC DYNAMIC SCENE REPRESENTATION AND RENDERING WITH 4D GAUSSIAN.pdf
@@ -16,7 +18,7 @@ confidence: high
 
 # 3D Gaussian Splatting 技术栈
 
-> 3D Gaussian Splatting（3DGS）是 2023 年提出的神经渲染方法，用数百万个 3D 高斯粒子（位置、协方差、颜色、不透明度）表示场景，通过光栅化 tile-based rasterizer 实时渲染。截至 2024-2025 年，3DGS 已发展出一个完整的技术栈，覆盖渲染后端、相机模型、场景规模、动态场景和深度先验五个维度。
+> 3D Gaussian Splatting（3DGS）是 2023 年提出的神经渲染方法，用数百万个 3D 高斯粒子（位置、协方差、颜色、不透明度）表示场景，通过光栅化 tile-based rasterizer 实时渲染。截至 2024-2025 年，3DGS 已发展出一个完整的技术栈，覆盖渲染后端、相机模型、场景规模、动态场景、深度先验和网格提取六个维度。
 
 ## 定义
 
@@ -129,7 +131,29 @@ FreeTimeGS 的启发：复杂系统不要用一个复杂模型覆盖全部，而
 
 OmniRe 的启发：不是"选一个方法然后扩展"，而是"每个东西用最适合的方式表示，再统一组合"。
 
+### 6. 网格提取：从高斯粒子到几何表面
+
+3DGS 输出数百万离散高斯椭球——没有显式 mesh，不能导入传统 3D 工具。四篇论文沿不同路径解决同一问题。
+
+| 维度 | 论文 | 核心方法 | 关键权衡 |
+|------|------|---------|---------|
+| 正则化+重建 | SuGaR (INRIA, 2023) | 表面对齐正则项 → Poisson 重建 | 第一个方法，但正则项是软约束 |
+| 表征降维 | 2DGS (ShanghaiTech+Tübingen, 2024) | 3D椭球→2D圆盘(surfel) + depth distortion loss | 几何从表征层面保证，非后处理 |
+| 不透明度场 | GOF (Tübingen, 2024) | 高斯不透明度场 → level-set → Marching Tetrahedra | 最完整/平滑，无边界场景适用 |
+| 点云采样 | 3DGS-to-PC (2025) | 概率密度采样 + 马氏距离过滤 | 灵活可定制，输出点云非 mesh |
+
+**SuGaR → 2DGS → GOF 演进逻辑**：SuGaR 加正则"逼"高斯贴表面 → 2DGS 从根上把椭球换圆盘让表面对齐天然成立 → GOF 不改变表征求改提取方案，在不透明度场找等值面。
+
+**2DGS 的关键洞察**：表面是 2D 的，3D 椭球天然不适合表示表面。把高斯从 3D 降维为 2D 圆盘 = 从表征层面解决了表面提取问题，而非后处理修补。
+
 ## 来源
+
+| 维度 | 论文 | PDF 路径 |
+|------|------|---------|
+| 网格提取 | SuGaR (2023) | `raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2023-SuGaR.pdf` |
+| 网格提取 | 2DGS (2024) | `raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2024-2D Gaussian Splatting.pdf` |
+| 网格提取 | GOF (2024) | `raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2024-Gaussian Opacity Fields.pdf` |
+| 网格提取 | 3DGS-to-PC (2025) | `raw/papers/paper/E-神经渲染/3DGS-ReconsMesh/2025-3DGS-TO-PC.pdf` |
 
 | 论文 | PDF 路径 | Denote 笔记 |
 |---|---|---|

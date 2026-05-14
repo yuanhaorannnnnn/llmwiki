@@ -1,0 +1,52 @@
+{
+  "note_path": "/home/yhr/Documents/notes/20260511T165628--paper-rhinoinsight__paper.md",
+  "paper_info": {
+    "path": "/home/yhr/Documents/notes/20260511T165628--paper-rhinoinsight__paper.md",
+    "filename": "20260511T165628--paper-rhinoinsight__paper.md",
+    "frontmatter": {
+      "title": "给 Deep Research Agent 配一份可验证的待办清单加一个证据审计员，不换模型就做到第一",
+      "subtitle": "RhinoInsight: Improving Deep Research through Control Mechanisms for Model Behavior and Context",
+      "date": "2025-11-24",
+      "tags": [
+        "paper"
+      ],
+      "identifier": "20260511T165628",
+      "source": "https://arxiv.org/pdf/2511.18743",
+      "authors": [
+        "Yu Lei",
+        "Shuzheng Si",
+        "Wei Wang",
+        "Yifei Wu",
+        "Gang Chen",
+        "Fanchao Qi",
+        "Maosong Sun"
+      ],
+      "venue": "arXiv 2025"
+    },
+    "title": "给 Deep Research Agent 配一份可验证的待办清单加一个证据审计员，不换模型就做到第一",
+    "subtitle": "RhinoInsight: Improving Deep Research through Control Mechanisms for Model Behavior and Context",
+    "authors": [
+      "Yu Lei",
+      "Shuzheng Si",
+      "Wei Wang",
+      "Yifei Wu",
+      "Gang Chen",
+      "Fanchao Qi",
+      "Maosong Sun"
+    ],
+    "venue": "arXiv 2025",
+    "date": "2025-11-24",
+    "identifier": "20260511T165628",
+    "source": "https://arxiv.org/pdf/2511.18743"
+  },
+  "existing_concepts": [
+    "redundancy-based-reliability-estimation",
+    "depth-estimation",
+    "neural-implicit-fields",
+    "3d-gaussian-splatting",
+    "4d-scene-decomposition",
+    "sim-ready-asset-generation",
+    "llm-wiki-stack"
+  ],
+  "timestamp": "2026-05-11T16:58:55.382621"
+}
