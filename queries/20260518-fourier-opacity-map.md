@@ -3,8 +3,8 @@ title: "Fourier Opacity Map：用傅里叶级数解决顺序无关透明渲染"
 created: 2026-05-18
 updated: 2026-05-18
 type: query
-tags: [article, wechat, rendering, graphics, transparency, oit, fourier, unreal-engine, shader]
-sources: [raw/articles/20260518-wechat-BGjT__9N4du8lwI7gKOBKg.md]
+tags: [article, clipping, rendering, graphics]
+sources: ["Clippings/Fourier Opacity Map传统图形学性感时刻.md"]
 source_url: https://mp.weixin.qq.com/s/BGjT__9N4du8lwI7gKOBKg
 confidence: high
 rating: 6
@@ -60,6 +60,14 @@ float IntegratedDensity = -2 * log(max(1.0 - Density, .00001f));
 // 直接得到该深度的累积光学深度
 ```
 
+Clipping 中给出的实现对应关系更具体：
+
+- `Texture2DSampleLevel(...)` 从第一阶段生成的 Fourier Opacity Map 中读取累积 Fourier coefficients。
+- `sincos(FrequencyScales0 * ShadingDepth, ...)` 在当前着色深度计算基函数值。
+- `ShadingCosCoefficient0 = 1 - ShadingCosCoefficient0` 对应积分公式中的 `1 - cos(kz)`。
+- `(CosCoefficients0.x * ShadingDepth / 2.0)` 对应常数项积分。
+- 两个 `dot(...)` 分别实现 sine / cosine 系数的求和项。
+
 ### 3. 两个关键工程优化
 
 **归一化（Normalization）**
@@ -76,6 +84,8 @@ float IntegratedDensity = -2 * log(max(1.0 - Density, .00001f));
 - 低频项（k=1）权重接近 1，保持主要形状
 - 高频项（k=3+）权重指数衰减，平滑不连续点附近的过冲/欠冲
 - 效果：消除阴影边界的伪影
+
+Clipping 特别指出，Ringing Suppression 是数学推导走向可用渲染效果的关键工程补丁。因为 Dirac delta 脉冲积分后得到的是阶跃函数，有限 Fourier series 逼近阶跃函数会出现 Gibbs phenomenon；高频项衰减可以降低阶跃点附近的过冲和欠冲。
 
 ### 4. 算法限制
 
@@ -95,5 +105,6 @@ float IntegratedDensity = -2 * log(max(1.0 - Density, .00001f));
 
 ## 来源
 
-- [[raw/articles/20260518-wechat-BGjT__9N4du8lwI7gKOBKg.md]]
+- 微信转载：https://mp.weixin.qq.com/s/BGjT__9N4du8lwI7gKOBKg
 - 知乎原文：https://zhuanlan.zhihu.com/p/1967330216536933895
+- 剪藏：[[../Clippings/Fourier Opacity Map传统图形学性感时刻.md]]

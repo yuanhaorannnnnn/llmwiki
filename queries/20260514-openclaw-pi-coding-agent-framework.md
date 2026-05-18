@@ -1,7 +1,7 @@
 ---
 title: "OpenClaw 背后框架 Pi：好的 Coding Agent 应该让用户决定需要什么"
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-05-18
 type: query
 tags: [article, wechat, coding-agent, framework, developer-tools]
 sources: [raw/articles/wechat_2_BKJq0HIe7TpsUUaT6mzSKA.md]
@@ -26,6 +26,7 @@ OpenClaw 的核心框架 Pi 的设计哲学：**让用户定义"需要什么"，
 - `queries/20260512-tdd-not-ai-native.md` — "人定义边界约束，AI 在护栏内探索"与此同构
 
 ## 相关笔记
+- [[20260518-pi-coding-agent-goal-open-model-harness]] — Pi Coding Agent 最全面指南：面向开放模型的可拆卸 Agent Harness
 - [[claude-code-practical-tips-note]] — Claude Code 实用技巧——官方核心开发者现场演示
 - [[20260515-raycast-v2-technical-deep-dive]] — Raycast v2 跨平台重写技术深潜：自建 Hybrid 栈的决策与细节
 - [[20260515-boris-cherny-opus-4-7-tips]] — Boris Cherny Opus 4.7 实操六条：从 Auto Mode 到自验证循环

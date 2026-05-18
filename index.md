@@ -20,6 +20,9 @@
 
 ## Concepts
 - [[deep-research-agents]]
+- [[essential-vs-accidental-complexity]] — Brooks《No Silver Bullet》的核心区分：LLM / agent 主要压缩 accidental complexity，但需求、抽象、概念结构、变化、责任和系统边界仍是 essential complexity。
+- [[claude-code-harness]] — Claude Code 官方 blog 系列综合概念页：prompt caching、context/session management、tool design、subagents、Auto Mode、Code Review、Opus 4.7 tuning、onboarding context layer。
+- [[agent-native-infrastructure]] — 面向 AI Agent 的 runtime / infra 概念页：稳定心智模型、Box runtime、虚拟独占物理共享、并行探索、低成本长尾服务，综合三篇 Agent Infra clipping 与 Kimi/TiDB 案例。
 - [[neural-implicit-fields]]
 - [[neural-radiance-field]] — NeRF 技术栈概念页：逆渲染本质、体渲染物理模型、Plenoxel 去神经网络化框架、位置编码/层次采样/视角相关颜色三大工程技巧，与 3DGS 的显式vs隐式/体渲染vs光栅化对比。
 - [[depth-estimation]]
@@ -32,8 +35,28 @@
 - [[kimi-k2-5-vs-claude-opus-4-6-coding-experience]] — 基于视频转录稿整理 Kimi K2.5 与 Claude Opus 4.6 在 Coding Agent 场景中的体验差异、关键要点和行动建议。
 
 ## Queries
+- [[20260518-lex-fridman-491-494-builder-stack-synthesis]] — Lex Fridman #491-#494 综合：AI factory、personal agent runtime、interactive worlds、creative authenticity 组成 AI 时代 builder stack。
+- [[20260518-lex-fridman-494-jensen-huang-nvidia-ai]] — Jensen Huang：AI Factory、extreme co-design、CUDA install base moat、agentic scaling、future programming as specification。
+- [[20260518-lex-fridman-493-jeff-kaplan-game-design]] — Jeff Kaplan：WoW quest-driven world design、Blizzard QA/hotfix polish、Titan 失败、Overwatch scope control、AI 在游戏开发中的边界。
+- [[20260518-lex-fridman-492-rick-beato-music-ai]] — Rick Beato：relative pitch、音乐 craft、AI music 作为 idea generator、AI slop 与真实性、YouTube copyright / Spotify 平台机制。
+- [[20260518-lex-fridman-491-peter-steinberger-openclaw]] — Peter Steinberger：OpenClaw 作为 consumer personal agent runtime，连接 chat、CLI、browser、skills、本机权限和 agentic apps。
 - [[20260518-fourier-opacity-map]] — Fourier Opacity Map：用傅里叶级数解除顺序无关透明渲染——从 Alpha 混合 → Beer-Lambert → 狄拉克 δ → 傅里叶级数解析解，两 Pass GPU 实现与振铃抑制优化。
 - [[20260518-claude-code-large-codebases-best-practices]] — Anthropic Applied AI 团队：Claude Code 在大代码库中的工作方式、Agentic Search vs RAG、五层 Harness 扩展体系（CLAUDE.md→Hooks→Skills→Plugins→MCP+LSP+Subagents）、三种企业配置模式、组织层面的采用策略。
+- [[20260518-kimi-agent-infra-database-service]] — Kimi Agent Infra 实践复盘：面向海量 Agent 站点的 Database 服务，核心是 per-tenant 多租隔离、统一栈、即时弹性，以及虚拟数据库界面替代每站点真实实例。
+- [[20260518-agent-infra-runtime-layer]] — Agent Infra 作为 inference 之上的 runtime 层：Skill + Env = Box、环境劣化、Branching、Messaging Hub、Scheduler 和 Agent 版 Kubernetes。
+- [[20260518-ai-agent-friendly-infrastructure]] — AI Agent 喜欢的基础软件：稳定心智模型、自然语言到符号表示、日抛 workload、虚拟化隔离和从 token 到持续服务的商业模式。
+- [[20260518-claude-code-prompt-caching]] — Claude Code 构建经验：prompt caching 是 agent 产品成本、延迟和 rate limit 的核心约束；静态 prefix、工具稳定、cache-safe compaction 是关键。
+- [[20260518-onboarding-claude-code-like-new-developer]] — Skyline 70 万行 C# legacy codebase 案例：像 onboarding 新开发者一样 onboarding Claude Code，把 context layer 版本化维护。
+- [[20260518-claude-opus-4-7-code-best-practices]] — Opus 4.7 在 Claude Code 中的 effort、adaptive thinking、交互节奏和 subagent/tool-use 行为变化。
+- [[20260518-claude-code-session-management-1m-context]] — Claude Code session management：continue、rewind、clear、compact、subagents 的 context hygiene 决策表。
+- [[20260518-claude-code-tool-design-seeing-like-agent]] — Seeing like an agent：AskUserQuestion、Task tool、Grep、progressive disclosure 和工具随模型能力演化。
+- [[20260518-claude-code-subagents]] — Claude Code Subagents：研究、并行任务、独立 review、verification、pipeline workflow 的使用边界和调用方式。
+- [[20260518-claude-code-auto-mode]] — Claude Code Auto Mode：用 classifier 在 tool call 前把关，实现少打断但保留安全护栏的权限模式。
+- [[20260518-claude-code-code-review]] — Claude Code Code Review：Anthropic 内部多 agent 深度 PR 审查系统，按 PR 复杂度扩展审查深度。
+- [[20260518-why-i-dont-vibe-code]] — Jacob Harris 对 vibe coding 的反向视角：LLM 降低 accidental complexity，但 friction、essential complexity、协作和责任不能被简单外包。
+- [[20260518-pi-coding-agent-goal-open-model-harness]] — Pi Coding Agent 指南：把 Pi 定位为面向开放模型的 composable harness，整理 provider 配置、最小组件栈、goal 注入、plan-first 与 skill-amplified 工作流。
+- [[20260518-brooks-no-silver-bullet]] — Frederick Brooks《No Silver Bullet》：软件没有单一银弹，真正困难在 complexity、conformity、changeability、invisibility 等 essential difficulties。
+- [[20260518-obsidian-web-clipper-ai-interpreter-video]] — X 视频/article：Obsidian Web Clipper Interpreter 接入 OpenRouter + Ring，在剪藏时自动生成 summary、tags、key points 等初筛 metadata。
 - [[20260518-obsidian-ceo-stephango-note-system]] — Obsidian CEO Steph Ango 的个人笔记系统：File over App 哲学、极简文件夹策略、properties 替代文件夹分类、强制首次链接规则、模板驱动+可组合、Evergreen Notes、日周月年节奏系统，以及与 wiki 现有体系的对照。
 - [[20260515-raycast-v2-technical-deep-dive]] — Raycast v2 跨平台重写技术深潜：自建 Hybrid 栈（原生外壳 + WebView + Node + Rust）的架构决策、Electron/Tauri 拒绝理由、WebKit/WebView2 原生感具体技巧、内存与性能数据。
 - [[20260512-nvidia-drive-sim-neural-reconstruction]] — NVIDIA DRIVE Sim 神经重建引擎：从真实传感器数据到 3D 数字孪生的分钟级重建管线，支持闭环模拟和合成数据生成。

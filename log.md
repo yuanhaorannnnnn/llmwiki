@@ -225,3 +225,99 @@
 ## [2026-05-18] video-ingest | Obsidian CEO Steph Ango 笔记系统：File over App、极简文件夹、properties 替代分类、首次链接规则 → queries/20260518-obsidian-ceo-stephango-note-system.md
 ## [2026-05-18] article-ingest | Claude Code 大代码库工作方式与五层 Harness 体系 → queries/20260518-claude-code-large-codebases-best-practices.md
 ## [2026-05-18] wechat-ingest | Fourier Opacity Map：傅里叶级数解顺序无关透明 → queries/20260518-fourier-opacity-map.md
+## [2026-05-18] clipping-ingest | 基于 Clippings 重整 Fourier Opacity Map → queries/20260518-fourier-opacity-map.md
+- 来源：Clippings/Fourier Opacity Map传统图形学性感时刻.md
+- 更新：改用 clipping 作为来源，补充 Depth Pass / Shadow Mask 代码映射、Normalization、Ringing Suppression 与限制
+
+## [2026-05-18] clipping-ingest | 基于 Clippings 重整 Claude Code 大代码库最佳实践 → queries/20260518-claude-code-large-codebases-best-practices.md
+- 来源：Clippings/How Claude Code works in large codebases Best practices and where to start.md
+- 更新：改用 clipping 作为来源，补充 Agentic Search、五层 Harness、LSP、Subagents、组织 owner 与 CarlaUE5 启发
+
+## [2026-05-18] clipping-ingest | Kimi Agent Infra Database 服务 → queries/20260518-kimi-agent-infra-database-service.md
+- 来源：Clippings/Agent Infra 实践复盘：Kimi 如何搭建 Agent 背后的 Database 服务.md
+- 新建：Kimi K2.6 建站场景下的 Agent-native database infra 笔记
+
+## [2026-05-18] clipping-ingest | Agent Infra Runtime 层 → queries/20260518-agent-infra-runtime-layer.md
+- 来源：Clippings/当我们在谈论 Agent Infra 时我们在谈论什么.md
+- 新建：Agent Infra 作为 inference 之上的 runtime 层，整理 Box、Branching、Messaging、Scheduler 等抽象
+
+## [2026-05-18] clipping-ingest | AI Agent 喜欢的基础软件 → queries/20260518-ai-agent-friendly-infrastructure.md
+- 来源：Clippings/创业者思考：如何做 AI Agent 喜欢的基础软件？.md
+- 新建：稳定心智模型、自然语言到符号表示、日抛 workload、虚拟化和商业模式整理
+
+## [2026-05-18] create | Agent-native Infrastructure 概念页 → concepts/agent-native-infrastructure.md
+- 来源：三篇 Agent Infra clipping + Kimi/TiDB 案例
+- 核心火花：Agent Infra 不是训练/推理 infra，而是支撑 Agent action 的 runtime 层；关键能力是可丢弃环境、虚拟独占、并行探索和低成本长尾服务
+
+## [2026-05-18] clipping-ingest | Claude Code Prompt Caching → queries/20260518-claude-code-prompt-caching.md
+- 来源：Clippings/Lessons from building Claude Code Prompt caching is everything.md
+- 核心：prefix match、稳定工具集、cache-safe compaction、defer tool loading
+
+## [2026-05-18] clipping-ingest | Onboarding Claude Code like a new developer → queries/20260518-onboarding-claude-code-like-new-developer.md
+- 来源：Clippings/Onboarding Claude Code like a new developer Lessons from 17 years of development.md
+- 核心：Skyline legacy codebase 案例，context layer 作为版本化项目资产
+
+## [2026-05-18] clipping-ingest | Claude Opus 4.7 with Claude Code → queries/20260518-claude-opus-4-7-code-best-practices.md
+- 来源：Clippings/Best practices for using Claude Opus 4.7 with Claude Code.md
+- 核心：xhigh effort、adaptive thinking、减少交互轮次、明确 subagent/tool-use 触发条件
+
+## [2026-05-18] clipping-ingest | Claude Code Session Management and 1M Context → queries/20260518-claude-code-session-management-1m-context.md
+- 来源：Clippings/Using Claude Code session management and 1M context.md
+- 核心：continue / rewind / clear / compact / subagents 的 context hygiene 决策
+
+## [2026-05-18] clipping-ingest | Seeing like an agent → queries/20260518-claude-code-tool-design-seeing-like-agent.md
+- 来源：Clippings/Seeing like an agent how we design tools in Claude Code.md
+- 核心：AskUserQuestion、Task tool、Grep、progressive disclosure、工具随模型能力演化
+
+## [2026-05-18] clipping-ingest | Claude Code Subagents → queries/20260518-claude-code-subagents.md
+- 来源：Clippings/How and when to use subagents in Claude Code.md
+- 核心：研究、并行、fresh review、verification、pipeline workflow 的 subagent 使用边界
+
+## [2026-05-18] clipping-ingest | Claude Code Auto Mode → queries/20260518-claude-code-auto-mode.md
+- 来源：Clippings/Auto mode for Claude Code.md
+- 核心：少打断的权限模式，classifier 在 tool call 前阻断危险动作
+
+## [2026-05-18] clipping-ingest | Claude Code Code Review → queries/20260518-claude-code-code-review.md
+- 来源：Clippings/Code Review for Claude Code.md
+- 核心：多 agent 深度 PR 审查，验证 bug、过滤误报、按严重程度输出
+
+## [2026-05-18] create | Claude Code Harness 概念页 → concepts/claude-code-harness.md
+- 来源：8 篇 Anthropic Claude Code blog + 大代码库最佳实践
+- 核心：Claude Code 的效果由模型 + harness 决定，harness 包括 cache、context、tools、subagents、permissions、review、onboarding 和 model tuning
+
+## [2026-05-18] article-ingest | Why I Don’t Vibe Code → queries/20260518-why-i-dont-vibe-code.md
+- 来源：raw/articles/20260518-why-i-dont-vibe-code.md
+- 核心：vibe coding 能降低 accidental complexity，但 friction、essential complexity、协作流程和责任链条不能被简单外包给 LLM
+
+## [2026-05-18] clipping-ingest | Pi Coding Agent 最全面指南 → queries/20260518-pi-coding-agent-goal-open-model-harness.md
+- 来源：Clippings/Pi Coding Agent 最全面指南（完美支持goal）.md
+- 核心：Pi 不是更省心的 Claude Code，而是面向开放模型测试的可拆卸 agent harness；关键在 provider 配置、最小组件栈、goal 注入、plan-first 和 skill-amplified workflow
+
+## [2026-05-18] paper-ingest | No Silver Bullet → queries/20260518-brooks-no-silver-bullet.md
+- 来源：raw/papers/20260518-brooks-no-silver-bullet.pdf
+- 新建：整理 Brooks 对 essence / accident 的区分、四个 essential difficulties、promising attacks，以及对 AI coding / agent harness 的迁移
+
+## [2026-05-18] create | Essential vs Accidental Complexity 概念页 → concepts/essential-vs-accidental-complexity.md
+- 来源：Brooks《No Silver Bullet》+ Why I Don’t Vibe Code
+- 核心：LLM / coding agent 主要压缩 accidental complexity；需求、抽象、边界、变化、责任和系统设计仍是 essential complexity
+
+## [2026-05-18] video-ingest | X article/video: Obsidian Web Clipper AI Interpreter → queries/20260518-obsidian-web-clipper-ai-interpreter-video.md
+- 来源：https://x.com/alin_zone/status/2055860128356892744
+- 媒体：raw/assets/video/x-2055860128356892744/x-2055860128356892744.mp4
+- 说明：视频无音频流，无法 FunASR 转录；已保存关键帧和 X article JSON，并基于公开正文生成无音轨说明与结构化笔记
+
+## [2026-05-18] video-ingest | Lex Fridman Podcast #491-#494 → queries/20260518-lex-fridman-491-494-builder-stack-synthesis.md
+- 来源：YouTube playlist + Lex Fridman 官方 transcripts
+- 创建笔记：queries/20260518-lex-fridman-491-peter-steinberger-openclaw.md
+- 创建笔记：queries/20260518-lex-fridman-492-rick-beato-music-ai.md
+- 创建笔记：queries/20260518-lex-fridman-493-jeff-kaplan-game-design.md
+- 创建笔记：queries/20260518-lex-fridman-494-jensen-huang-nvidia-ai.md
+- 创建综合页：queries/20260518-lex-fridman-491-494-builder-stack-synthesis.md
+- 核心内容：AI factory、personal agent runtime、interactive worlds、creative authenticity 共同组成 AI 时代 builder stack
+
+## [2026-05-18] video-ingest-update | Lex Fridman Podcast #491-#494 raw video download
+- 补下载原始视频：raw/assets/video/lex-fridman-491-494/YFjfBk8HI5o/YFjfBk8HI5o.mp4
+- 补下载原始视频：raw/assets/video/lex-fridman-491-494/1SJiTwbSI58/1SJiTwbSI58.mp4
+- 补下载原始视频：raw/assets/video/lex-fridman-491-494/H9rF1CSSh-w/H9rF1CSSh-w.mp4
+- 补下载原始视频：raw/assets/video/lex-fridman-491-494/vif8NQcjVf0/vif8NQcjVf0.mp4
+- 同步更新四篇 episode note 和综合页的 sources
