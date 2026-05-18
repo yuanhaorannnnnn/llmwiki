@@ -95,6 +95,13 @@ confidence: high
 5. **团队级配置 MCP。** 把团队共用的 MCP server check-in 到 `.mcp.json`，一次配置全队受益。
 6. **善用 `!` 和 pipe。** 长命令直接 `!` 执行进入 context；管道组合 `claude -p` 用做超级 Unix 工具。
 
+## 相关笔记
+- [[20260515-boris-cherny-opus-4-7-tips]] — Boris Cherny Opus 4.7 实操六条：从 Auto Mode 到自验证循环
+- [[20260518-claude-code-large-codebases-best-practices]] — Claude Code 在大代码库中的工作方式：企业级部署最佳实践
+- [[20260514-barrystop-agent-three-iron-rules]] — Barry Zhang (Anthropic) AI Engineer Summit：如何构建高效 Agent 的三条铁律
+- [[20260514-openclaw-pi-coding-agent-framework]] — OpenClaw 背后框架 Pi：好的 Coding Agent 应该让用户决定需要什么
+- [[20260513-complete-guide-building-claude-skills]] — Anthropic 官方 Claude Skills 构建完整指南：从设计到分发
+
 ## 来源
 
 - 原始链接：https://x.com/i/status/2047877250184618248

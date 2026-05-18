@@ -6,6 +6,11 @@ type: concept
 tags: [concept, agents, llm]
 papers:
   - 20260511T165628--paper-rhinoinsight__paper.md
+## 相关笔记
+- [[20260511-how-we-built-our-multi-agent-research-system]] — Anthropic 多 Agent 研究系统：从原型到生产的工程实战手册
+- [[20260514-264page-agent-survey]] — 264 页 Agent 综述：MetaGPT、Mila、斯坦福、耶鲁、谷歌联合撰写
+- [[kimi-k2-5-tech-blog-visual-agentic-intelligence]] — Kimi K2.5 的 Agent Swarm：用 PARL 训练并行编排器的工程细节
+
 ---
 
 # Deep Research Agents

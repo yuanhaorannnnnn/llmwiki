@@ -110,6 +110,11 @@
   - 建立 entity 页面
   - 反向链接
 
+## 相关笔记
+- [[20260518-obsidian-ceo-stephango-note-system]] — Obsidian CEO Steph Ango 的笔记系统：File over App 哲学与极简主义实践
+- [[20260512-perplexity-agent-skills-design]] — Perplexity Agent Skills 设计与维护方法论
+- [[20260512-the-next-great-moat]] — AI 时代的下一个护城河：公司组织形态本身
+
 ---
 
 ## E. 可进阶优化（强烈建议）

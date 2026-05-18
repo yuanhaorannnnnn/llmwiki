@@ -141,6 +141,10 @@ $$\mathcal{L}(\boldsymbol{\theta} | \mathbf{O}) = \prod_{t=1}^{T} \sum_{g \in \{
 
 冗余方法需要硬件/系统层面的多源部署；一致性方法只需要软件层面的多视角变换。两者互补。
 
+## 相关笔记
+- [[20260512-tdd-not-ai-native]] — TDD 反而不是 AI 时代的答案：从过程确定性到结果确定性
+- [[20260514-data-labeling-giant-vs-synthetic-data]] — 0 融资 10 亿美元营收：数据标注巨头不认为合成数据是未来
+
 ## 来源
 
 | 论文 | PDF 路径 | Denote 笔记 |

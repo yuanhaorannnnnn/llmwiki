@@ -89,6 +89,11 @@ confidence: medium
           └──────────────────┘
 ```
 
+## 相关笔记
+- [[claude-code-practical-tips-note]] — Claude Code 实用技巧——官方核心开发者现场演示
+- [[20260514-openclaw-pi-coding-agent-framework]] — OpenClaw 背后框架 Pi：好的 Coding Agent 应该让用户决定需要什么
+- [[deep-research-agents]] — Deep Research Agents
+
 ## 来源路径
 
 - 视频：[[raw/assets/video/2048628829753835521/2048628829753835521.mp4]]

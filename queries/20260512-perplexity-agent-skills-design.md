@@ -72,6 +72,13 @@ Skill 不是普通软件——它是"给模型和其环境构建的上下文"。
 - **建立 gotcha 段**——在 Skill 末尾加 `## Gotchas` 或 `## 常见错误`，每次 agent 在这个 Skill 上出错就追加一条
 - **检查 action at a distance**——新增 content-ingest 后，要不要检查它是否影响了 paper-to-concept 的路由？两个 Skill 的 description 边界是否清晰？
 
+## 相关笔记
+- [[20260513-complete-guide-building-claude-skills]] — Anthropic 官方 Claude Skills 构建完整指南：从设计到分发
+- [[20260518-claude-code-large-codebases-best-practices]] — Claude Code 在大代码库中的工作方式：企业级部署最佳实践
+- [[20260514-barrystop-agent-three-iron-rules]] — Barry Zhang (Anthropic) AI Engineer Summit：如何构建高效 Agent 的三条铁律
+- [[20260512-tdd-not-ai-native]] — TDD 反而不是 AI 时代的答案：从过程确定性到结果确定性
+- [[20260518-obsidian-ceo-stephango-note-system]] — Obsidian CEO Steph Ango 的笔记系统：File over App 哲学与极简主义实践
+
 ## 来源
 
 - 原文：https://research.perplexity.ai/articles/designing-refining-and-maintaining-agent-skills-at-perplexity

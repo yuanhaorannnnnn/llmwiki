@@ -7,6 +7,11 @@ tags: [concept, depth-estimation, monocular-depth, computer-vision, 3d-reconstru
 papers:
   - 20260430T184500--paper-infinidepth__paper.md
   - paper-prompt-depth-anything
+## 相关笔记
+- [[neural-radiance-field]] — Neural Radiance Field (NeRF) 技术栈
+- [[3d-gaussian-splatting]] — 3D Gaussian Splatting 技术栈
+- [[neural-implicit-fields]] — 神经隐式场：用神经网络编码连续空间函数
+
 ---
 
 # 深度估计

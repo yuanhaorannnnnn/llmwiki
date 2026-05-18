@@ -71,6 +71,11 @@ confidence: medium
 - `concepts/sim-ready-asset-generation.md` — ADAS 仿真场景需要大量 sim-ready 资产（车辆、行人、道路），PhysX-Anything 类技术可降低场景构建成本
 - `concepts/redundancy-based-reliability-estimation.md` — ADAS 多传感器融合的可靠性评估可借鉴冗余估计方法论
 
+## 相关笔记
+- [[20260512-nvidia-drive-sim-neural-reconstruction]] — NVIDIA DRIVE Sim 神经重建引擎：从真实驾驶数据到可闭环模拟的 3D 数字孪生
+- [[sim-ready-asset-generation]] — Sim-ready Asset Generation
+- [[20260514-ue-digital-twin-development-guide]] — UE 数字孪生开发流程与前沿展望 v4.0
+
 ## 来源
 
 - PDF：[[raw/notes/归档/竞品资料/ADAS测试体系及其在量产项目中的实践.pdf]]

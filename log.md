@@ -221,3 +221,7 @@
 
 ## [2026-05-11] article-ingest | Anthropic 多 Agent 研究系统的工程实战经验 → queries/20260511-how-we-built-our-multi-agent-research-system.md
 ## [2026-05-11] article-ingest | Kimi K2.5 Agent Swarm 的 PARL 训练方法论 → queries/kimi-k2-5-tech-blog-visual-agentic-intelligence.md
+## [2026-05-15] article-ingest | Raycast v2 跨平台重写：自建 Hybrid 栈的架构决策与 WebView 原生感技巧 → queries/20260515-raycast-v2-technical-deep-dive.md
+## [2026-05-18] video-ingest | Obsidian CEO Steph Ango 笔记系统：File over App、极简文件夹、properties 替代分类、首次链接规则 → queries/20260518-obsidian-ceo-stephango-note-system.md
+## [2026-05-18] article-ingest | Claude Code 大代码库工作方式与五层 Harness 体系 → queries/20260518-claude-code-large-codebases-best-practices.md
+## [2026-05-18] wechat-ingest | Fourier Opacity Map：傅里叶级数解顺序无关透明 → queries/20260518-fourier-opacity-map.md

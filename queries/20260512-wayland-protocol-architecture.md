@@ -77,6 +77,10 @@ Wayland 协议不是"发送绘图指令"，而是"操作对象"：
 - 这个系列还有前一篇《从 X11 到 Wayland，迈出这一步为何如此艰难？》，分析了迁移面临的困难
 - 2025年6月，X11 维护者 Enrico Weigelt 创建了 X11 分支 XLibre Xserver，试图复兴 X11
 
+## 相关笔记
+- [[20260512-alpha-compositing-guide]] — Alpha 融合（Alpha Compositing）技术详解：从公式到实践陷阱
+- [[20260512-ue-multi-process-rendering]] — UE5 Multi-Process Rendering：多进程替代多 GPU 的渲染架构
+
 ## 来源
 
 - 原文：[[Clippings/万字长文详解 Wayland 协议、架构.md]]

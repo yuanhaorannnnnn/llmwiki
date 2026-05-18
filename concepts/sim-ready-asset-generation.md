@@ -124,6 +124,12 @@ PhysX-Anything 提醒我们一件事：**评估生成模型不应该跟参考答
 - 图结构 → 用邻接表 + 节点属性文本描述
 - 音频 → 用频谱包络 + 关键帧参数描述
 
+## 相关笔记
+- [[3d-gaussian-splatting]] — 3D Gaussian Splatting 技术栈
+- [[graphics-to-world-model]] — 从图形计算到世界模型
+- [[neural-radiance-field]] — Neural Radiance Field (NeRF) 技术栈
+- [[20260513-adas-testing-system-mass-production]] — ADAS 测试体系及其在量产项目中的实践
+
 ## 来源
 
 | 论文 | PDF 路径 | Denote 笔记 |

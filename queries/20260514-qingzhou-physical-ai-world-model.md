@@ -25,6 +25,11 @@ confidence: medium
 
 - `concepts/graphics-to-world-model.md` — 陈宝权论证的世界模型三层能力（预测→规划→执行）在此得到工业实例验证
 
+## 相关笔记
+- [[graphics-to-world-model]] — 从图形计算到世界模型
+- [[20260514-ai-generation-evolution-2d-to-world-model]] — AI 生成式技术演进：从 2D 到世界模型的维度革命
+- [[sim-ready-asset-generation]] — Sim-ready Asset Generation
+
 ## 来源
 
 - 原文：[[raw/articles/wechat_1_vQCotnqj0qZBDPOVWeYGjg.md]]

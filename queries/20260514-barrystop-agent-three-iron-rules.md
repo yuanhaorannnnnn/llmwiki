@@ -81,6 +81,13 @@ Barry 的建议：**实际从 Agent 视角完成一个完整任务**。你会经
 - `concepts/graphics-to-world-model.md` — Barry 的 "Budget-aware agents" 与 token 经济优化同源
 - 我们自己的 content-ingest / discussion-digest — Barry 的"不要过早优化"验证了我们先建 MVP 再迭代的路径
 
+## 相关笔记
+- [[claude-code-practical-tips-note]] — Claude Code 实用技巧——官方核心开发者现场演示
+- [[20260518-claude-code-large-codebases-best-practices]] — Claude Code 在大代码库中的工作方式：企业级部署最佳实践
+- [[20260512-perplexity-agent-skills-design]] — Perplexity Agent Skills 设计与维护方法论
+- [[20260511-how-we-built-our-multi-agent-research-system]] — Anthropic 多 Agent 研究系统：从原型到生产的工程实战手册
+- [[20260515-boris-cherny-opus-4-7-tips]] — Boris Cherny Opus 4.7 实操六条：从 Auto Mode 到自验证循环
+
 ## 来源
 
 - 视频：[[raw/assets/video/D7_ipDqhtwk/D7_ipDqhtwk.mp4]]

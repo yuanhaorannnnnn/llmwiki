@@ -43,6 +43,11 @@ nDisplay 是 UE 将实时 3D 内容跨多台机器、多块屏幕、多种异形
    - MPR 解决"怎么让一台机器上的两张 GPU 高效协作"（单节点内部的多 GPU）
    - 两者可以叠加使用：nDisplay 集群 + 每个节点跑 MPR
 
+## 相关笔记
+- [[20260512-ue-multi-process-rendering]] — UE5 Multi-Process Rendering：多进程替代多 GPU 的渲染架构
+- [[20260512-gpu-communication-tech]] — GPU 通信技术全景：GPU Direct、NVLink、RDMA 与 SLI
+- [[20260514-ue-digital-twin-development-guide]] — UE 数字孪生开发流程与前沿展望 v4.0
+
 ## 来源
 
 - 原文：[[Clippings/nDisplay Overview for Unreal Engine  Unreal Engine 5.7 Documentation.md]]

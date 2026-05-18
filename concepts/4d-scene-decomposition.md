@@ -6,6 +6,11 @@ type: concept
 tags: [concept, 4d-reconstruction, dynamic-scene, segmentation]
 papers:
   - 20260430T174824--paper-split4d__paper.md
+## 相关笔记
+- [[neural-radiance-field]] — Neural Radiance Field (NeRF) 技术栈
+- [[3d-gaussian-splatting]] — 3D Gaussian Splatting 技术栈
+- [[neural-implicit-fields]] — 神经隐式场：用神经网络编码连续空间函数
+
 ---
 
 # 4D 场景分解

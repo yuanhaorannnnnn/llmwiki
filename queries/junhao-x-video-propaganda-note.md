@@ -35,6 +35,9 @@ confidence: medium
 4. 对类似宣传视频，笔记应拆分“可确认事实”和“解释性分析”，避免把 ASR 幻听当成原文。
 5. 若用于传播分析，可重点记录：语言选择、视觉素材来源标注、AI 生成画面使用、情绪词和敌我叙事结构。
 
+## 相关笔记
+- [[20260512-openai-founders-podcast-core-memory]] — Sam Altman & Greg Brockman Core Memory 访谈：OpenAI 十年、安全哲学与 AGI 叙事困境
+
 ## 来源路径
 
 - 视频：[[raw/assets/video/2048301259434962944/2048301259434962944.mp4]]

@@ -71,6 +71,10 @@ Scaling 2.0（Kimi 的三维框架）：
 - `concepts/graphics-to-world-model.md` — 同样面对 Scaling Law 的数据瓶颈，Kimi 的方案是优化器效率，陈宝权的方案是 Simulation 数据生成
 - `queries/20260512-openai-founders-podcast-core-memory.md` — 开源 vs 闭源的路线对比
 
+## 相关笔记
+- [[kimi-k2-5-tech-blog-visual-agentic-intelligence]] — Kimi K2.5 的 Agent Swarm：用 PARL 训练并行编排器的工程细节
+- [[20260514-barrystop-agent-three-iron-rules]] — Barry Zhang (Anthropic) AI Engineer Summit：如何构建高效 Agent 的三条铁律
+
 ## 来源
 
 - 视频：[[raw/assets/video/CwePo4847ho/CwePo4847ho.mp4]]

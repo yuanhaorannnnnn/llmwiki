@@ -2,7 +2,7 @@
 
 > 内容目录。每页按类型列出，附一行摘要。
 > 查询时先读此文件定位相关页面。
-> Last updated: 2026-05-12
+> Last updated: 2026-05-18
 
 ---
 
@@ -32,6 +32,10 @@
 - [[kimi-k2-5-vs-claude-opus-4-6-coding-experience]] — 基于视频转录稿整理 Kimi K2.5 与 Claude Opus 4.6 在 Coding Agent 场景中的体验差异、关键要点和行动建议。
 
 ## Queries
+- [[20260518-fourier-opacity-map]] — Fourier Opacity Map：用傅里叶级数解除顺序无关透明渲染——从 Alpha 混合 → Beer-Lambert → 狄拉克 δ → 傅里叶级数解析解，两 Pass GPU 实现与振铃抑制优化。
+- [[20260518-claude-code-large-codebases-best-practices]] — Anthropic Applied AI 团队：Claude Code 在大代码库中的工作方式、Agentic Search vs RAG、五层 Harness 扩展体系（CLAUDE.md→Hooks→Skills→Plugins→MCP+LSP+Subagents）、三种企业配置模式、组织层面的采用策略。
+- [[20260518-obsidian-ceo-stephango-note-system]] — Obsidian CEO Steph Ango 的个人笔记系统：File over App 哲学、极简文件夹策略、properties 替代文件夹分类、强制首次链接规则、模板驱动+可组合、Evergreen Notes、日周月年节奏系统，以及与 wiki 现有体系的对照。
+- [[20260515-raycast-v2-technical-deep-dive]] — Raycast v2 跨平台重写技术深潜：自建 Hybrid 栈（原生外壳 + WebView + Node + Rust）的架构决策、Electron/Tauri 拒绝理由、WebKit/WebView2 原生感具体技巧、内存与性能数据。
 - [[20260512-nvidia-drive-sim-neural-reconstruction]] — NVIDIA DRIVE Sim 神经重建引擎：从真实传感器数据到 3D 数字孪生的分钟级重建管线，支持闭环模拟和合成数据生成。
 - [[20260512-jensen-huang-cmu-2026-commencement]] — Jensen Huang CMU 2026 毕业演讲：60 年计算范式终结（人写软件→机器学习）、失败即学习机制、AI 时代"明智推进"而非"畏缩退让"。
 - [[20260512-html-effectiveness-demo-site]] — Thariq 的 AI 生成 HTML 演示合集离线镜像（21 个交互式页面），覆盖代码对比/可视化 diff/幻灯片/动画原型/流程图等 20 个用例。

@@ -56,6 +56,11 @@ Kimi K2.5 的 Agent Swarm 不是手动编排的多 Agent 系统，而是一个**
 3. 如果模型拒绝并行，在环境里加计算瓶颈强制它——不要靠 prompt 求它并行
 4. 构建 agentic coding benchmark 时，用 minimal tool set（6 个工具以内）而非全量工具集——非思考模式下 minimal tools 得分反而更高
 
+## 相关笔记
+- [[20260511-how-we-built-our-multi-agent-research-system]] — Anthropic 多 Agent 研究系统：从原型到生产的工程实战手册
+- [[deep-research-agents]] — Deep Research Agents
+- [[20260514-264page-agent-survey]] — 264 页 Agent 综述：MetaGPT、Mila、斯坦福、耶鲁、谷歌联合撰写
+
 ## 来源
 
 - 原文：https://www.kimi.com/blog/kimi-k2-5

@@ -43,6 +43,10 @@ NTNU 团队开发了一个高光谱卫星遥感仿真工具，核心链路是：
   - NeRF 通过体渲染重建场景 → 这个工具通过大气辐射传输模型正向模拟场景
   - 本质差别：渲染的方向（正向模拟 vs 逆向重建）和应用场景（娱乐 vs 遥感）
 
+## 相关笔记
+- [[sim-ready-asset-generation]] — Sim-ready Asset Generation
+- [[20260512-nvidia-drive-sim-neural-reconstruction]] — NVIDIA DRIVE Sim 神经重建引擎：从真实驾驶数据到可闭环模拟的 3D 数字孪生
+
 ## 来源
 
 - 原文：[[raw/articles/20260513-hyperspectral-satellite-simulation-ntnu.md]]

@@ -21,6 +21,11 @@ confidence: medium
 - `queries/20260512-ue-ndisplay-overview.md` — UE 引擎在 AIGC 场景生成中的另一个应用方向
 - nDisplay 研究 — 同一个引擎，虚拟制片和 AIGC 城市场景的方向分叉
 
+## 相关笔记
+- [[20260514-ue-digital-twin-development-guide]] — UE 数字孪生开发流程与前沿展望 v4.0
+- [[20260512-ue-ndisplay-overview]] — nDisplay 技术总览：实时内容的多屏无限制缩放
+- [[20260514-qingzhou-physical-ai-world-model]] — 轻舟智航：把世界模型装进 500TOPS 量产车
+
 ## 来源
 
 - 原文：[[raw/articles/wechat_7_wUrDtdnxdJHn5ZNgu5XwxQ.md]]

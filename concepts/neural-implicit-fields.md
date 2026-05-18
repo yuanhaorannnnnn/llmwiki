@@ -6,6 +6,11 @@ type: concept
 tags: [concept, neural-implicit, 3d-representation, continuous-function, computer-vision, computer-graphics]
 papers:
   - 20260430T184500--paper-infinidepth__paper.md
+## 相关笔记
+- [[neural-radiance-field]] — Neural Radiance Field (NeRF) 技术栈
+- [[3d-gaussian-splatting]] — 3D Gaussian Splatting 技术栈
+- [[depth-estimation]] — 深度估计：从单目图像推断场景的三维深度信息
+
 ---
 
 # 神经隐式场

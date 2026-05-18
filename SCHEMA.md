@@ -6,10 +6,13 @@ LLM / AI Agent / 知识管理方法论（可扩展）
 ## Conventions
 - File names: lowercase, hyphens, no spaces（例：`transformer-architecture.md`）
 - 每个 wiki 页面必须有 YAML frontmatter
-- 使用 `[[wikilinks]]` 跨页面链接（每页至少 2 个出站链接）
+- 使用 `[[wikilinks]]` 跨页面链接（每页至少 2 个出站链接，含对其他笔记的概念引用，不只来源链）
 - 更新页面时必须修改 `updated` 日期
 - 新页面必须加入 `index.md` 对应分区
 - 每次操作必须追加到 `log.md`
+- **Tags 永远用复数**（`agents` 而非 `agent`，`papers` 而非 `paper`）
+- **日期统一 `YYYY-MM-DD` 格式**
+- **一致性压倒一切**——一次约定的风格压缩未来几百次决策
 - **Provenance markers:** 当页面综合 3+ 来源时，在段落末尾追加 `^[raw/articles/source-file.md]`，让读者可追溯具体来源
 
 ## Frontmatter
@@ -23,6 +26,7 @@ tags: [来自下方 taxonomy]
 sources: [raw/articles/source-name.md]
 # 可选质量标记：
 confidence: high | medium | low        # 声明的可信度
+rating: 1-7                            # 个人评分（7=改变人生，来自 Steph Ango）
 contested: true                        # 存在未解决的矛盾
 contradictions: [other-page-slug]      # 与本页冲突的页面
 ---
@@ -62,7 +66,7 @@ language: zh | en | auto
 - **来源类型:** article, paper, video, transcript, book, clipping
 - **元信息:** prediction, todo, deprecated
 
-规则：页面使用的所有 tag 必须出现在本 taxonomy 中。如需新 tag，先在此添加，再使用。
+规则：页面使用的所有 tag 必须出现在本 taxonomy 中。如需新 tag，先在此添加，再使用。集合类 tag 永远用复数（`agents` 而非 `agent`，`papers` 而非 `paper`），专有名词除外（`rust`、`nvidia`、`wayland`、`tdd` 等）。
 
 ## Page Thresholds
 - **新建页面**：实体/概念在 2+ 来源中出现，或在单一来源中处于核心地位

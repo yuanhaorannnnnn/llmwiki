@@ -45,6 +45,12 @@ UE 5.2 引入的 Multi-Process Rendering (MPR) 是 nDisplay 多 GPU 策略的根
 
 MPR 的出现标志着多 GPU 渲染从"硬件层面统一"到"软件层面协作"的范式迁移。SLI（2004-2022）的核心假设是"让多张 GPU 假装成一张"——但现代 GPU 的计算能力已超过 SLI 桥的通信带宽所能支撑的数据共享量。MPR 的做法恰恰相反：承认 GPU 是独立的，只在边界处交换数据。
 
+## 相关笔记
+- [[20260512-gpu-communication-tech]] — GPU 通信技术全景：GPU Direct、NVLink、RDMA 与 SLI
+- [[20260512-ue-ndisplay-overview]] — nDisplay 技术总览：实时内容的多屏无限制缩放
+- [[20260512-wayland-protocol-architecture]] — Wayland 协议与架构详解：为什么 X11 必须被替代
+- [[20260514-ue-digital-twin-development-guide]] — UE 数字孪生开发流程与前沿展望 v4.0
+
 ## 来源
 
 - 原文：[[Clippings/Multi-Process Rendering Introduction.md]]

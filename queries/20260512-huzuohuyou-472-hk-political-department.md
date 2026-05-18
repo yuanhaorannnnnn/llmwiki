@@ -54,6 +54,9 @@ confidence: medium
 
 > "全世界很少有一个城市，能给自己的警察体系里几乎每一种岗位都拍影视剧。可能只有直接向 MI5 汇报的政治部没有被拍过。"
 
+## 相关笔记
+- [[tang-xuanzong-kaiyuan-collapse-note]] — 忽左忽右201｜与郭建龙漫谈唐玄宗与开天盛世的崩溃
+
 ## 来源
 
 - 音频：[[raw/assets/audio/huzuohuyou-472.wav]]

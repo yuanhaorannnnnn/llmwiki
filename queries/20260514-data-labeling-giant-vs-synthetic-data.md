@@ -20,6 +20,10 @@ confidence: medium
 - `concepts/graphics-to-world-model.md` — 陈宝权论证 Simulation 是突破数据瓶颈的关键，本文提供反方论据
 - `queries/20260512-tdd-not-ai-native.md` — 同构的辩证关系：合成数据 vs 真实数据的边界类似 AI 写测试 vs 人写测试
 
+## 相关笔记
+- [[redundancy-based-reliability-estimation]] — Redundancy-based Reliability Estimation
+- [[20260514-ai-finance-erp-funding]] — AI 财务 ERP 年融 1 亿美金：OpenAI 领投 AI Excel
+
 ## 来源
 
 - 原文：[[raw/articles/wechat_5_0MsmNb-wQmt8P4KDTLc21Q.md]]

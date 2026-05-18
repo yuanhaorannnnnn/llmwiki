@@ -83,6 +83,10 @@ confidence: high
 >
 > —— 结尾引用 CMU 校训 "My heart is in the work"
 
+## 相关笔记
+- [[20260512-openai-founders-podcast-core-memory]] — Sam Altman & Greg Brockman Core Memory 访谈：OpenAI 十年、安全哲学与 AGI 叙事困境
+- [[20260512-nvidia-drive-sim-neural-reconstruction]] — NVIDIA DRIVE Sim 神经重建引擎：从真实驾驶数据到可闭环模拟的 3D 数字孪生
+
 ## 来源
 
 - 视频：[[raw/assets/video/FZh_0uRgrg4/FZh_0uRgrg4.mp4]]

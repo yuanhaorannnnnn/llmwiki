@@ -20,6 +20,10 @@ AI 生成技术的演进遵循一条从低维到高维的明确路径：2D图像
 - `concepts/graphics-to-world-model.md` — 提供了理论框架层面的对照
 - `concepts/3d-gaussian-splatting.md` + `concepts/neural-radiance-field.md` — 3D 生成阶段的核心技术
 
+## 相关笔记
+- [[graphics-to-world-model]] — 从图形计算到世界模型
+- [[20260514-qingzhou-physical-ai-world-model]] — 轻舟智航：把世界模型装进 500TOPS 量产车
+
 ## 来源
 
 - 原文：[[raw/articles/wechat_3_ummmQpXH0-s8QE838Sbqqw.md]]

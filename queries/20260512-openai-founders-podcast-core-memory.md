@@ -60,6 +60,10 @@ confidence: medium
 > "这是你建的。"
 > —— Greg Brockman 讲一个非技术人用 AI 实现自己构思的 app
 
+## 相关笔记
+- [[20260512-jensen-huang-cmu-2026-commencement]] — Jensen Huang CMU 2026 毕业演讲：AI 时代的新计算范式与一代人的责任
+- [[20260512-the-next-great-moat]] — AI 时代的下一个护城河：公司组织形态本身
+
 ## 来源
 
 - 视频：[[raw/assets/video/NCKQL0op30E/NCKQL0op30E.mp4]]

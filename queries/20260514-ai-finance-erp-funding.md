@@ -15,6 +15,9 @@ confidence: medium
 
 AI 正在快速渗透企业最保守的领域——财务。一年内 AI 财务/ERP 赛道融资超 1 亿美元，OpenAI 领投了一家用 AI 替代电子表格的创业公司。核心逻辑：财务数据天然结构化、规则明确、错误成本极高——这些特性恰好是 LLM + 规则引擎混合方案的理想场景。
 
+## 相关笔记
+- [[20260514-data-labeling-giant-vs-synthetic-data]] — 0 融资 10 亿美元营收：数据标注巨头不认为合成数据是未来
+
 ## 来源
 
 - 原文：[[raw/articles/wechat_4_uHKY0Xecz_JYelDudxwLtQ.md]]

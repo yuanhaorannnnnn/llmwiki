@@ -77,6 +77,12 @@ C_ABZ = α_A·C_A + (1-α_A)·α_B·C_B + (1-α_A)·(1-α_B)·C_Z
 - **花一整天调白边黑边？先检查 mask 是不是被二值化了。** 保留 sigmoid 输出的连续值 mask 是最便宜的修复
 - **需要中间合成？用 premultiplied alpha。** 不要让"必须先叠到背景上"这个限制绑架你的渲染流程
 - **GPU 纹理格式选择**：如果你在做 alpha 融合相关的 shader 工作，选择 GL_RGBA 还是 GL_RGBA_PREMULTIPLIED 取决于你需要原始颜色还是预乘颜色——选错会导致颜色计算完全错误
+## 相关笔记
+- [[20260518-fourier-opacity-map]] — Fourier Opacity Map：用傅里叶级数解除顺序无关透明渲染
+- [[20260512-wayland-protocol-architecture]] — Wayland 协议与架构详解：为什么 X11 必须被替代
+- [[3d-gaussian-splatting]] — 3D Gaussian Splatting 技术栈
+- [[neural-radiance-field]] — Neural Radiance Field (NeRF) 技术栈
+
 ## 来源
 
 - 原文：[[Clippings/alpha融合详解（alpha compositing）-CSDN博客.md]]

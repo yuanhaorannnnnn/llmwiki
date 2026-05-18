@@ -90,6 +90,10 @@ GOF (2024) — 更高维的解法：建立高斯不透明度场
 - `concepts/neural-radiance-field.md` — NeRF 也有 mesh 提取问题（如 NeRF2Mesh），3DGS 的 mesh 提取更直接
 - `concepts/graphics-to-world-model.md` — GOF 的不透明度场 level-set 本质上是在做"从渲染表征到物理几何"的 Real2Sim 第一步
 
+## 相关笔记
+- [[3d-gaussian-splatting]] — 3D Gaussian Splatting 技术栈
+- [[sim-ready-asset-generation]] — Sim-ready Asset Generation
+
 ## 来源
 
 | 论文 | PDF 路径 |

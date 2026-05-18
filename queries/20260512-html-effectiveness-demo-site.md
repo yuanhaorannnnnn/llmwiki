@@ -48,6 +48,10 @@ xdg-open raw/assets/thariqs.github.io/html-effectiveness/index.html
 
 所有内部链接已转换为本地路径，无需网络。
 
+## 相关笔记
+- [[20260515-raycast-v2-technical-deep-dive]] — Raycast v2 跨平台重写技术深潜：自建 Hybrid 栈的决策与细节
+- [[20260512-tdd-not-ai-native]] — TDD 反而不是 AI 时代的答案：从过程确定性到结果确定性
+
 ## 来源
 
 - 原文：https://thariqs.github.io/html-effectiveness/
