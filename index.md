@@ -40,6 +40,10 @@
 - [[20260518-lex-fridman-493-jeff-kaplan-game-design]] — Jeff Kaplan：WoW quest-driven world design、Blizzard QA/hotfix polish、Titan 失败、Overwatch scope control、AI 在游戏开发中的边界。
 - [[20260518-lex-fridman-492-rick-beato-music-ai]] — Rick Beato：relative pitch、音乐 craft、AI music 作为 idea generator、AI slop 与真实性、YouTube copyright / Spotify 平台机制。
 - [[20260518-lex-fridman-491-peter-steinberger-openclaw]] — Peter Steinberger：OpenClaw 作为 consumer personal agent runtime，连接 chat、CLI、browser、skills、本机权限和 agentic apps。
+- [[20260519-codex-maxxing-jason-liu]] — Codex-maxxing：Jason Liu 的持久化工作线程方法论——Durable Threads + Obsidian Vault 记忆系统 + Heartbeats 线程级自动化 + $browser/@chrome/@computer 三级访问 + "Ambition without verification is just a wish"。
+- [[20260519-karpathy-claude-md-viral]] — Karpathy 的 CLAUDE.md：82K Star 的 21 条规则，三大板块（Defaults/Behavior/Memory+Stack），编码准确率 65%→94%，每周节省 $975。
+- [[20260519-multi-agent-collaboration-survey]] — 多智能体协作工程调查：4 类触发机制、7 种拓扑结构、7 层调用链、Codex/Claude Code/OpenClaw/Hermes 四大系统对比、7 个反模式、8 问选择顺序、Delegation Contract 模板。
+- [[20260519-codex-goals-guide]] — Codex Goals：用持久化线程级目标合约替代反复提示——六要素强 Goal 模板、生命周期管理、evidence-based completion、研究型 claim-by-claim 审计。
 - [[20260518-fourier-opacity-map]] — Fourier Opacity Map：用傅里叶级数解除顺序无关透明渲染——从 Alpha 混合 → Beer-Lambert → 狄拉克 δ → 傅里叶级数解析解，两 Pass GPU 实现与振铃抑制优化。
 - [[20260518-claude-code-large-codebases-best-practices]] — Anthropic Applied AI 团队：Claude Code 在大代码库中的工作方式、Agentic Search vs RAG、五层 Harness 扩展体系（CLAUDE.md→Hooks→Skills→Plugins→MCP+LSP+Subagents）、三种企业配置模式、组织层面的采用策略。
 - [[20260518-kimi-agent-infra-database-service]] — Kimi Agent Infra 实践复盘：面向海量 Agent 站点的 Database 服务，核心是 per-tenant 多租隔离、统一栈、即时弹性，以及虚拟数据库界面替代每站点真实实例。

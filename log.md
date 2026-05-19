@@ -225,6 +225,10 @@
 ## [2026-05-18] video-ingest | Obsidian CEO Steph Ango 笔记系统：File over App、极简文件夹、properties 替代分类、首次链接规则 → queries/20260518-obsidian-ceo-stephango-note-system.md
 ## [2026-05-18] article-ingest | Claude Code 大代码库工作方式与五层 Harness 体系 → queries/20260518-claude-code-large-codebases-best-practices.md
 ## [2026-05-18] wechat-ingest | Fourier Opacity Map：傅里叶级数解顺序无关透明 → queries/20260518-fourier-opacity-map.md
+## [2026-05-19] clipping-ingest | Codex Goals：持久化目标合约替代反复提示 → queries/20260519-codex-goals-guide.md
+## [2026-05-19] clipping-ingest | 多智能体协作工程调查：触发/拓扑/调用链/四大系统对比 → queries/20260519-multi-agent-collaboration-survey.md
+## [2026-05-19] clipping-ingest | Karpathy CLAUDE.md：82K Star 21 条规则 65%→94% → queries/20260519-karpathy-claude-md-viral.md
+## [2026-05-19] clipping-ingest | Codex-maxxing：Jason Liu 持久化线程 + Obsidian Vault + Heartbeats → queries/20260519-codex-maxxing-jason-liu.md
 ## [2026-05-18] clipping-ingest | 基于 Clippings 重整 Fourier Opacity Map → queries/20260518-fourier-opacity-map.md
 - 来源：Clippings/Fourier Opacity Map传统图形学性感时刻.md
 - 更新：改用 clipping 作为来源，补充 Depth Pass / Shadow Mask 代码映射、Normalization、Ringing Suppression 与限制

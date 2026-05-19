@@ -118,6 +118,7 @@ Root (根目录)
 - **评分系统**：给 ingest 的内容打分（"这个 X thread 有多值得回顾？"）
 
 ## 相关笔记
+- [[20260519-codex-maxxing-jason-liu]] — Jason Liu：Obsidian Vault 作为 Agent 记忆库的工程实践
 - [[20260512-the-next-great-moat]] — AI 时代的下一个护城河：公司组织形态本身
 - [[20260512-perplexity-agent-skills-design]] — Perplexity Agent Skills 设计与维护方法论
 - [[20260515-raycast-v2-technical-deep-dive]] — Raycast v2 跨平台重写技术深潜：自建 Hybrid 栈的决策与细节

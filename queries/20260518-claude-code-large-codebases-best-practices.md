@@ -145,6 +145,7 @@ CLAUDE.md ──> Hooks ──> Skills ──> Plugins ──> MCP Servers
 - **CarlaUE5 优先级**：先做 `.claudeignore` / `permissions.deny` 排噪、根 `CLAUDE.md` 精简化、`CODEBASE_MAP.md` 顶层目录索引，再考虑更复杂的 MCP 或 subagent 工作流
 
 ## 相关笔记
+- [[20260519-codex-goals-guide]] — Codex Goals：用持久化目标合约替代反复提示的 Agent 工作模式
 - [[claude-code-practical-tips-note]] — Claude Code 实用技巧——官方核心开发者现场演示
 - [[20260515-boris-cherny-opus-4-7-tips]] — Boris Cherny Opus 4.7 实操六条：从 Auto Mode 到自验证循环
 - [[20260513-complete-guide-building-claude-skills]] — Anthropic 官方 Claude Skills 构建完整指南：从设计到分发
